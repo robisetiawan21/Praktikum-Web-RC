@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tugas Minggu 3</title>
+</head>
+
+<body>
+    
+    <p class="theme">Select theme :
+        <select onchange="changeColor(value)">
+            <option value="white">White</option>
+            <option value="black">Black</option>
+        </select>
+    </p>
+    <script>
+        function changeColor(value) {
+    var theme = document.getElementsByClassName("theme")
+
+        if (value == "black") {
+            for (let i = 0; i < theme.length; i++) {
+            theme[i].style.color = 'white'
+        }
+        document.body.style.backgroundColor = value
+        } else {
+            for (let i = 0; i < theme.length; i++) {
+                theme[i].style.color = 'black'
+        }
+        document.body.style.backgroundColor = value
+        }
+    }
+
+    </script>
+
+    <h1 class="theme">This is my website</h1>
+
+    <p class="theme">Select the weather type name :
+        <select onchange="Pilihcuaca(value)">
+            <option value="sunny">Sunny</option>
+            <option value="rainy">Rainy</option>
+        </select>
+    </p>
+
+    <p id="weather" class="theme"></p>
+    <script>
+        function Pilihcuaca(value) {
+            var weather = document.getElementById("weather")
+
+            if (value == "sunny") {
+                weather.innerHTML = "it is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream"
+            } else if (value == "rainy") {
+                weather.innerHTML = "rain is failing outside, take a rain cost and a brolly, and dont stay out for to long."
+            }
+        }
+    </script>
+        <form>
+            <label class="theme">Input number :</label>
+            <input type="" name="" id="input">
+            <button id="button">Get Factorial</button>
+            <div id="demo"></div>
+        </form></p>
+    <p id="factorial" class="theme"></p>
+    <script>
+            var input = document.getElementById("input")
+            var button = document.getElementById("button")
+            var demo = document.getElementById("demo")
+     
+            
+            button.addEventListener("click", function(e){
+                e.preventDefault()
+                var valInp = input.value;
+                var hasil = 1;
+                for(var i=valInp; i>0; i--){
+                    hasil *=i;
+                    
+                }
+            demo.innerHTML = `The factorial of  ${valInp} is ${hasil} `;
+            })
+    </script>
+
+</body>
+
+</html>
